@@ -1,7 +1,11 @@
-/**
+/** 
+ *  PROBLEM :
  * 
+ *  Convert a given number to base 7 String using following encoding :
+ *  0  1  2  3  4  5  6
+ *  0  a  d  r  t  i  s
  */
-package com.expedia.code;
+package com.demo.code;
 
 /**
  * @author vshukla
@@ -11,12 +15,17 @@ public class BaseEncoding {
 
 	public static final int BASE = 7;
 
+	/**
+	 * Method to convert given long number to String with specfied encoding 
+	 */
 	public static String convert(long input){
 		String convertedStr = convertToBase7(input, BASE);
 		return encode(convertedStr);
 	}
 	
-	
+	/**
+	*  Converts a given long number to the given base
+	*/
 	public static String convertToBase7(long number, long base) {
 		
 		long quotient = number / base;
@@ -30,6 +39,9 @@ public class BaseEncoding {
 		}
 	}
 
+	/**
+	 *  Takes in a base converted String and encodes it with given encoding 
+	 */
 	private static String encode(String num) {
 		StringBuilder encoding = new StringBuilder("");
 
@@ -45,15 +57,15 @@ public class BaseEncoding {
 					break;
 				}
 				case '2': {
-					encoding.append("t");
+					encoding.append("d");
 					break;
 				}
 				case '3': {
-					encoding.append("l");
+					encoding.append("r");
 					break;
 				}
 				case '4': {
-					encoding.append("s");
+					encoding.append("t");
 					break;
 				}
 				case '5': {
@@ -61,7 +73,7 @@ public class BaseEncoding {
 					break;
 				}
 				case '6': {
-					encoding.append("n");
+					encoding.append("s");
 					break;
 				}
 			}
