@@ -1,7 +1,18 @@
 /**
+ * PROBLEM :
  * 
+ * Given two lists : mainList and subList, return the index of subList present in mainList. 
+ * In other words, given two lists, return the starting index where the second list is present as sublist in first list.
+ * Return -1 is sublist is not present.
+ * 
+ * Example:
+ * 1.  mainList = {1,2,3,4,5}
+ *     subList =  {3,4,5}      .... returns 2
+ * 
+ * 2.  mainList = {a,b,c,d,e}
+ *     subList =  {c,c,d,e}   .... returns -1 because no sublist found
  */
-package com.expedia.code;
+package com.demo.code;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -17,7 +28,9 @@ public class FindSublist {
 	public static LinkedListNode head1 ;
 	public static LinkedListNode head2 ;
 	
-	
+	/**
+	 * Helper methods to add nodes in first list. Used for demonstration.
+	 */
 	static void addNodeH1(String val){
 		LinkedListNode node = new LinkedListNode(val);
 		if(head1 == null){
@@ -31,7 +44,9 @@ public class FindSublist {
 		}
 	}
 	
-	
+	/**
+	 * Helper method to add nodes to second list.
+	 */
 	static void addNodeH2(String val){
 		LinkedListNode node = new LinkedListNode(val);
 		if(head2 == null){
@@ -45,6 +60,9 @@ public class FindSublist {
 		}
 	}
 	
+	/**
+	 * helper method to print the content of the list.
+	 */
 	static void print(LinkedListNode head){
 		LinkedListNode temp = head;
 		while(temp!=null){
@@ -89,7 +107,10 @@ public class FindSublist {
 
 	
 	
-	
+	/**
+	 * Method converts the given LinkedLists to ArrayLists. 
+	 * Then uses Collections API to find starting index of second list present in first.
+	 */ 
 	private static int find(LinkedListNode node1, LinkedListNode node2) {
 			
 		List<String> mainList = new ArrayList<String>();
@@ -113,8 +134,10 @@ public class FindSublist {
 
 
 
-
-	public static class LinkedListNode{
+	/**
+	 * Inner node class.
+	 */ 
+	static class LinkedListNode{
 		String val;
 		LinkedListNode next;
 		
