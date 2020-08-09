@@ -37,7 +37,9 @@ public class StringPermutation {
             if(visited[i]) continue;
 
             //if String contains duplicates
-            if(i>0 && s.charAt(i)==s.charAt(i-1) && !visited[i-1]) continue;
+            if(i>0 && s.charAt(i)==s.charAt(i-1) && !visited[i-1]){
+                continue;
+            }
 
             sb.append(s.charAt(i));
             visited[i]=true;
@@ -50,7 +52,7 @@ public class StringPermutation {
 
     public static void main(String[] args) {
         StringPermutation sp = new StringPermutation();
-        String input = "aac";
+        String input = "1122";
 
         List<String> permutations = sp.generatePermutations(input);
 
