@@ -1,4 +1,4 @@
-package com.vaibhav1.codingexercise;
+package com.vaibhav1.codingexercise.company.facebook;
 
 import java.util.HashMap;
 import java.util.Map;
